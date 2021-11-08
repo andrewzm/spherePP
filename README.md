@@ -6,7 +6,7 @@ The figure below depicts results from modeling the end locations of cyclone data
 
 <div class="row">
   <div class="column">
-    <img src="pacific_end_dens1_est_radial_v20000_all.png" alt="Predictions" style="width:100%">
+    <img src="./img/pacific_end_dens1_est_radial_v20000_all.png" alt="Predictions" style="width:100%">
   </div>
 </div>
 
