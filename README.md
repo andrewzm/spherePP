@@ -16,7 +16,7 @@ Please note the following if proceeding to reproduce the results in Section 4.2.
 
 **Software requirements:** R (>=3.6), Python (>=3.7), PyTorch, Numpy
 
-**Hardware requirements:** > 16GB of RAM. Multiple cores could be used with slight code modification to parallelize the fitting and bootstrapping procedures.
+**Hardware requirements:** >= 16GB of RAM. Multiple cores could be used with slight code modification to parallelize the fitting and bootstrapping procedures.
 
 **Contents:** 
 - `pacific.csv`              Data containing the end locations of cyclones ni the North Pacific Ocean
