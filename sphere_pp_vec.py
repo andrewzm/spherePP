@@ -319,7 +319,12 @@ N = 30
 p = 1
 RF = RadialFlow(N, inputs)
 
+print("### Intensity-function estimation ###")
+
 for i in range(50):
+    
+    print("Fitting network committee member ", i+1)
+    
     np.random.seed(20000+i)
     torch.manual_seed(20000+i)
 
@@ -334,7 +339,7 @@ for i in range(50):
         # Forward pass:
 
         loss = RF.loss(theta_all, mu_all, beta_all)
-        print(t, loss.item())
+        # print(t, loss.item())
 
         # Zero gradients, perform a backward pass, and update the weights.
         optimizer.zero_grad()

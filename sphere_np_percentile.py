@@ -2,6 +2,7 @@ import numpy as np
 import json
 import math
 
+print("### Finding lower and upper percentiles ###")
 
 samp_all = []
 nsim = 50

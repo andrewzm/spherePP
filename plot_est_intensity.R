@@ -4,11 +4,10 @@ library(jsonlite)
 library(FRK)
 library(mapproj)
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+cat("### Plotting the estimated intensity ###\n")
 
 Data_list <- jsonlite::read_json("pacific_end_data.json")
 Dens_list <- jsonlite::read_json('pacific_end_dens_est_radial_est_avg.json')
-
 
 Lon <- Lat <- rep(0, length(Data_list))
 for(i in 1:length(Data_list)) {
@@ -17,7 +16,6 @@ for(i in 1:length(Data_list)) {
 }
 data_df <- data.frame(Lon = Lon, 
                       Lat = Lat)
-
 
 Lon <- Lat <- dens <- rep(0, length(Dens_list))
 for(i in 1:length(Dens_list)) {
@@ -29,12 +27,9 @@ dens_df <- data.frame(Lon = Lon,
                       Lat = Lat,
                       dens = dens)
 
-summary(dens_df[,3])
-
 area <- 6371 ** 2 * 4 / 10000
 npoints <- 1049
 dens_df[,3] <- dens_df[,3] * npoints / area 
-
 
 subLon <- unique(Lon)[seq(1,length(unique(Lon)))]
 subLat <- unique(Lat)[seq(1,length(unique(Lat)))]
@@ -42,7 +37,6 @@ dens_df <- filter(dens_df, Lon %in% subLon &
                     Lat %in% subLat)
 
 data(worldmap)
-
 
 plot_world <- function(lon = 140, show_legend = TRUE) {
   

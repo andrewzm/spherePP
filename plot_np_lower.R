@@ -4,7 +4,7 @@ library(jsonlite)
 library(FRK)
 library(mapproj)
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+cat("### Plotting the 10 percentile ###\n")
 
 Data_list <- jsonlite::read_json("pacific_end_data.json")
 Dens_list <- jsonlite::read_json("pacific_end_dens_est_radial_lower_v20000.json")

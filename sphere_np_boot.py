@@ -309,9 +309,12 @@ theta_vec1 = [(theta_vec1[i] + 90.) * np.pi / 180. for i in range(len(theta_vec1
 theta_vec2 = [(theta_vec2[i] + 180.) * np.pi / 180. for i in range(len(theta_vec2))]
 theta_vec = [np.array([theta1, theta2]) for (theta1, theta2) in zip(theta_vec1, theta_vec2)]
 
+print("### Bootstrapping ###")
 
 for i in range(50):
 
+    print("Bootstrap sample ", i+1)
+    
     np.random.seed(20000+i)
     torch.manual_seed(20000+i)
     random.seed(20000+i)
@@ -343,7 +346,7 @@ for i in range(50):
         # Forward pass:
 
         loss = RF.loss(theta_all, mu_all, beta_all)
-        print(t, loss.item())
+        # print(t, loss.item())
 
         # Zero gradients, perform a backward pass, and update the weights.
         optimizer.zero_grad()

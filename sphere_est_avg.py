@@ -2,6 +2,7 @@ import numpy as np
 import json
 import math
 
+print("### Averaging over committee members ###")
 
 samp_all = []
 nsim = 50

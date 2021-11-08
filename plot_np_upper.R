@@ -4,7 +4,7 @@ library(jsonlite)
 library(FRK)
 library(mapproj)
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+cat("### Plotting the 90 percentile ###\n")
 
 Data_list <- jsonlite::read_json("pacific_end_data.json")
 Dens_list <- jsonlite::read_json("pacific_end_dens_est_radial_upper_v20000.json")
@@ -28,8 +28,6 @@ for(i in 1:length(Dens_list)) {
 dens_df <- data.frame(Lon = Lon, 
                       Lat = Lat,
                       dens = dens)
-
-summary(dens_df[,3])
 
 area <- 6371 ** 2 * 4 / 10000
 dens_df[,3] <- dens_df[,3] / area 
