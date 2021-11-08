@@ -1,10 +1,18 @@
-### Reproducible data and scripts for the results in Section 4.2 of the paper Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport by James Ng and Andrew Zammit-Mangion
+# Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport
 
-**Authors:**  Tin Lok James Ng and Andrew Zammit-Mangion
+This GitHub page provides code for reproducing the results in Section 4.2 of the manuscript titled *Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport* by Tin Lok James Ng and Andrew Zammit-Mangion. The manuscript describes the use of normalizing flows, specifically radial flows, to model the intensity function of point process on the sphere.
 
-**Date:** 07 November 2021
+The figure below depicts results from modeling the end locations of cyclone data in the North Pacific Ocean using the normalizing flows. The center panel shows the intensity-function estimate, while the left and right panels depict the empirical 10 and 90 percentiles of the bootstrap distribution of the intensity function, respectively.
 
-**Description:** Data and code for reproducing the results of the experiment in Section 4.2 of the paper
+<div class="row">
+  <div class="column">
+    <img src="pacific_end_dens1_est_radial_v20000_all.png" alt="Predictions" style="width:100%">
+  </div>
+</div>
+
+## Instructions
+
+Please note the following when trying to reproduce the results in Section 4.2.
 
 **Software requirements:** R, Python (>=2.7), PyTorch, Numpy
 
@@ -19,9 +27,9 @@
 - plot_est_intensity.R     Plots the estimated intensity function
 - plot_np_lower.R          Plots the empirical  10  percentile  of the  bootstrap  distribution
 - plot_np_upper.R          Plots the empirical  90  percentile  of the  bootstrap  distribution
-- run_all.sh		     A bash script that runs all of the above
+- run_all.sh		       A bash script that runs all of the above
 
-**Notes:**	Please run the bash script or the scripts in the following order:
+**Notes:**	Please run the bash script `run_all.sh` or the scripts in the following order:
 - sphere_pp_vec.py 
 - sphere_est_avg.py 
 - sphere_np_boot.py
