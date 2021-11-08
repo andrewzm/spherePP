@@ -1,6 +1,6 @@
 # Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport
 
-This GitHub page provides code for reproducing the results in Section 4.2 of the manuscript titled *Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport* by Tin Lok James Ng and Andrew Zammit-Mangion. The manuscript describes the use of normalizing flows, specifically radial flows, to model the intensity function of point process on the sphere.
+This GitHub page provides code for reproducing the results in Section 4.2 of the manuscript titled *Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport* by Tin Lok James Ng and Andrew Zammit-Mangion. The manuscript describes the use of normalizing flows, specifically radial flows, to model the intensity function of a non-homogeneous point process on the sphere.
 
 The figure below depicts results from modeling the end locations of cyclone data in the North Pacific Ocean using the normalizing flows. The center panel shows the intensity-function estimate, while the left and right panels depict the empirical 10 and 90 percentiles of the bootstrap distribution of the intensity function, respectively.
 
@@ -12,11 +12,11 @@ The figure below depicts results from modeling the end locations of cyclone data
 
 ## Instructions
 
-Please note the following when trying to reproduce the results in Section 4.2.
+Please note the following if proceeding to reproduce the results in Section 4.2.
 
-**Software requirements:** R, Python (>=2.7), PyTorch, Numpy
+**Software requirements:** R (>=3.6), Python (>=3.7), PyTorch, Numpy
 
-**Hardware requirements:** Experiments in this section can only be run on a CPU, but some of this code may improve in performance if modified to use a top-end GPU
+**Hardware requirements:** Experiments in this section will run on the CPU, but some of this code may improve in performance if modified to use a top-end GPU
 
 **Contents:** 
 - pacific.csv              Data containing the end locations of cyclones ni the North Pacific Ocean
@@ -29,7 +29,7 @@ Please note the following when trying to reproduce the results in Section 4.2.
 - plot_np_upper.R          Plots the empirical  90  percentile  of the  bootstrap  distribution
 - run_all.sh		       A bash script that runs all of the above
 
-**Notes:**	Please run the bash script `run_all.sh` or the scripts in the following order:
+**Notes:**	Please run the bash script `run_all.sh` or the scripts below in the following order:
 - sphere_pp_vec.py 
 - sphere_est_avg.py 
 - sphere_np_boot.py
